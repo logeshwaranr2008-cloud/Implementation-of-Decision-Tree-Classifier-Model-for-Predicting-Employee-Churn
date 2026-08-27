@@ -1,100 +1,284 @@
-# Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn
+# Windows-basic-commands-batchscript
+Ex08-Windows-basic-commands-batchscript
 
-## AIM:
-To write a program to implement the Decision Tree Classifier Model for Predicting Employee Churn.
+# AIM:
+To execute Windows basic commands and batch scripting
 
-## Equipments Required:
-1. Hardware – PCs
-2. Anaconda – Python 3.7 Installation / Jupyter notebook
+# DESIGN STEPS:
 
-## Algorithm
-1. Load and preprocess the employee dataset.
-2. Split the dataset into training and testing data.
-3. Train the Decision Tree Classifier model.
-4. Predict results, find accuracy, and display the decision tree.
+### Step 1:
 
-## Program:
+Navigate to any Windows environment installed on the system or installed inside a virtual environment like virtual box/vmware 
+
+### Step 2:
+
+Write the Windows commands / batch file . Save each script in a file with a .bat extension. Ensure you have the necessary permissions to perform the operations. Adapt paths as needed based on your system configuration.
+### Step 3:
+
+Execute the necessary commands/batch file for the desired output. 
+
+
+
+
+# WINDOWS COMMANDS:
+## Exercise 1: Basic Directory and File Operations
+Create a directory named "my-folder"
 ```
-/*
-Program to implement the Decision Tree Classifier Model for Predicting Employee Churn.
-Developed by:R.Logeshwaran
-RegisterNumber: 212225040205
-*/
-#Ex 08 - Implementation of Decision Tree Classifier Model for Predicting Employee Churn
-# Import libraries
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
-from sklearn import tree
-import matplotlib.pyplot as plt
+mkdir asgar
+```
+<img width="557" height="67" alt="image" src="https://github.com/user-attachments/assets/98ecd466-5a9e-4e32-9786-6863f44dc05d" />
 
-# ------------------------------
-# Step 1: Sample dataset
-# ------------------------------
-data = {
-    'satisfaction_level': [0.38, 0.80, 0.11, 0.72, 0.37, 0.41, 0.10, 0.92],
-    'last_evaluation': [0.53, 0.86, 0.88, 0.87, 0.52, 0.50, 0.77, 0.89],
-    'number_project': [2, 5, 7, 5, 2, 2, 6, 5],
-    'average_monthly_hours': [157, 262, 272, 223, 159, 153, 247, 224],
-    'time_spend_company': [3, 6, 4, 5, 3, 3, 4, 5],
-    'Work_accident': [0, 0, 0, 0, 0, 0, 0, 0],
-    'promotion_last_5years': [0, 0, 0, 0, 0, 0, 0, 0],
-    'Departments': ['sales','accounting','hr','technical','support','management','marketing','product'],
-    'salary': ['low','medium','medium','high','low','low','medium','high'],
-    'left': [1, 1, 1, 1, 1, 0, 1, 0]  # Target variable: 1=Churn, 0=Stayed
-}
 
-df = pd.DataFrame(data)
 
-# ------------------------------
-# Step 2: Encode categorical variables
-# ------------------------------
-df = pd.get_dummies(df, columns=['Departments','salary'], drop_first=True)
+## COMMAND AND OUTPUT
 
-# ------------------------------
-# Step 3: Split into features and target
-# ------------------------------
-X = df.drop('left', axis=1)
-y = df['left']
+Remove the directory "my-folder"
+```
+rmdir asgar
+```
+<img width="545" height="72" alt="image" src="https://github.com/user-attachments/assets/db6e3f41-6e84-4355-83c2-2db43d30d1f4" />
 
-# ------------------------------
-# Step 4: Train-test split
-# ------------------------------
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
 
-# ------------------------------
-# Step 5: Create Decision Tree Classifier
-# ------------------------------
-dt_model = DecisionTreeClassifier(criterion='entropy', max_depth=4, random_state=42)
-dt_model.fit(X_train, y_train)
 
-# ------------------------------
-# Step 6: Make predictions
-# ------------------------------
-y_pred = dt_model.predict(X_test)
+## COMMAND AND OUTPUT
 
-# ------------------------------
-# Step 7: Evaluate the model
-# ------------------------------
-print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
-print("\nAccuracy Score:", accuracy_score(y_test, y_pred))
-print("\nClassification Report:\n", classification_report(y_test, y_pred))
 
-# ------------------------------
-# Step 8: Visualize the decision tree
-# ------------------------------
-plt.figure(figsize=(20,10))
-tree.plot_tree(dt_model, feature_names=X.columns, class_names=['Stayed','Churn'], filled=True)
-plt.show()
+Create the file Rose.txt
+```
+type nul > rose.txt
+```
+<img width="712" height="75" alt="image" src="https://github.com/user-attachments/assets/0b2956d4-7634-4ef6-a43b-96f0fd0fbb24" />
+
+
+
+
+## COMMAND AND OUTPUT
+
+
+Create the file hello.txt using echo and redirection
+```
+echo Hello World > hello.txt
+```
+<img width="947" height="57" alt="image" src="https://github.com/user-attachments/assets/e25dc07c-c4cb-4629-b452-436106654ba7" />
+
+
+
+## COMMAND AND OUTPUT
+
+Copy the file hello.txt into the file hello1.txt
+```
+copy hello.txt hello1.txt
 ```
 
-## Output:
-<img width="1037" height="347" alt="image" src="https://github.com/user-attachments/assets/420b45d3-4408-4064-98b8-3b6a65917d2a" />
-
-<img width="1342" height="617" alt="image" src="https://github.com/user-attachments/assets/c5ea1acd-1fcf-4957-a277-b912ce1c531d" />
+<img width="936" height="97" alt="image" src="https://github.com/user-attachments/assets/8e861f12-b476-437f-8be1-1d17cd7ebd65" />
 
 
+## COMMAND AND OUTPUT
 
-## Result:
-Thus the program to implement the  Decision Tree Classifier Model for Predicting Employee Churn is written and verified using python programming.
+Remove the file hello1.txt
+```
+del hello1.txt
+```
+<img width="866" height="80" alt="Screenshot 2026-08-27 140435" src="https://github.com/user-attachments/assets/2766dd08-4715-4248-aa14-e56a0f91967a" />
+
+
+## COMMAND AND OUTPUT
+
+List out the file hello1.txt in the current directory
+```
+dir hello1.txt
+```
+<img width="973" height="557" alt="Screenshot 2026-08-27 140442" src="https://github.com/user-attachments/assets/9b5ad224-64f7-4b36-9026-59ccf1d8ed14" />
+
+
+## COMMAND AND OUTPUT
+
+List out all the associated file extensions 
+```
+assoc
+```
+<img width="440" height="656" alt="image" src="https://github.com/user-attachments/assets/e0583484-8c8b-4bdb-9744-fcedb207247e" />
+
+
+## COMMAND AND OUTPUT
+
+
+Compare the file hello.txt and rose.txt
+```
+fc hello.txt rose.txt
+```
+<img width="1602" height="601" alt="image" src="https://github.com/user-attachments/assets/71c7e52b-d9bc-41da-9d2f-1a3a92cf5536" />
+
+
+## COMMAND AND OUTPUT
+
+## Exercise 2: Advanced Batch Scripting
+Create a batch file named on the desktop. The batch file need to have a variable assigned with a desired name for ex. name="John" and display as "Hello, John".
+```
+@echo off
+set name=John
+echo Hello, %name%
+pause
+```
+
+
+
+
+
+## OUTPUT
+<img width="907" height="292" alt="image" src="https://github.com/user-attachments/assets/0771caf5-c88a-43ad-aeac-98292b9c9022" />
+
+
+
+
+
+Create a batch file  on the desktop that checks whether a user-input number is odd or not. The script should:
+Prompt the user to enter a number.
+Calculate the remainder when the number is divided by 2.
+Display whether the number is odd or not.
+Ask the user if they want to check another number.
+Repeat the process if the user enters Y, and exit with a thank-you message if the user enters N.
+Handle invalid inputs for the continuation prompt (Y/N) gracefully.
+## CODE
+```
+@echo off
+:START
+set /p num=Enter a number: 
+
+set /a rem=%num% %% 2
+
+if %rem%==1 (
+    echo The number %num% is ODD
+) else (
+    echo The number %num% is NOT ODD
+)
+
+:CHOICE
+set /p choice=Do you want to check another number? (Y/N): 
+
+if /I "%choice%"=="Y" goto START
+if /I "%choice%"=="N" goto END
+
+echo Invalid choice. Please enter Y or N.
+goto CHOICE
+:END
+echo Thank you!
+pause
+```
+
+
+
+## OUTPUT
+<img width="907" height="367" alt="image" src="https://github.com/user-attachments/assets/497b267d-0192-4f69-aa19-8470ca79657c" />
+
+
+
+
+
+
+Write a batch file that uses a FOR loop to iterate over a sequence of numbers (1 to 5) and displays each number with the label Number:. The output should pause at the end.
+## CODE
+```
+@echo off
+for %%i in (1 2 3 4 5) do (
+    echo Number: %%i
+)
+pause
+```
+
+
+
+
+## OUTPUT
+<img width="667" height="302" alt="image" src="https://github.com/user-attachments/assets/cf90a593-9f23-4927-8f3e-6da16b93d9d4" />
+
+
+
+
+
+
+Write a batch script to check whether a file named sample.txt exists in the current directory. If the file exists, display the message sample.txt exists. Otherwise, display sample.txt does not exist. Pause the script at the end to view the result.
+
+Instructions:
+Use the IF EXIST conditional statement.
+Make sure the script works for files located in the same directory as the batch file.
+Use pause to keep the command window open after displaying the message.
+Expected Output (if the file exists):
+## CODE
+```
+@echo off
+if exist sample.txt (
+    echo sample.txt exists
+) else (
+    echo sample.txt does not exist
+)
+pause
+```
+
+## OUTPUT
+<img width="335" height="32" alt="image" src="https://github.com/user-attachments/assets/afe3b0a3-0c65-4068-a216-beb24b16adc6" />
+
+
+
+
+Write a batch script that displays a simple menu with three options:
+Say Hello – Displays the message Hello, World!
+Create a File – Creates a file named newfile.txt with the content This is a new file
+Exit – Exits the script with a goodbye message
+The script should repeatedly display the menu until the user chooses to exit. Use goto statements to handle menu navigation.
+## CODE
+```
+@echo off
+:MENU
+cls
+echo ===== MENU =====
+echo 1. Say Hello
+echo 2. Create a File
+echo 3. Exit
+echo =================
+set /p choice=Enter your choice: 
+
+if "%choice%"=="1" goto HELLO
+if "%choice%"=="2" goto CREATE
+if "%choice%"=="3" goto EXIT
+
+echo Invalid choice!
+pause
+goto MENU
+
+:HELLO
+echo Hello, World!
+pause
+goto MENU
+
+:CREATE
+echo This is a new file > newfile.txt
+echo File created successfully!
+pause
+goto MENU
+:EXIT
+echo Goodbye!
+pause
+exit
+```
+
+
+
+## OUTPUT 1
+<img width="530" height="137" alt="image" src="https://github.com/user-attachments/assets/c2e90cef-2a40-461d-afec-98c1cae1755f" />
+
+## OUTPUT 2
+<img width="387" height="132" alt="image" src="https://github.com/user-attachments/assets/95c60b1e-09bb-4629-9f47-d7610042fe04" />
+
+## OUTPUT 3
+<img width="455" height="132" alt="image" src="https://github.com/user-attachments/assets/37b88dca-f5ff-4314-8a3f-9c46f7cda58d" />
+
+
+
+
+
+
+
+
+# RESULT:
+The commands/batch files are executed successfully.
